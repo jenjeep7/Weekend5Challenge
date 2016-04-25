@@ -5,7 +5,7 @@ app.controller('TaskController', ['$http', function($http){
   var vm = this;
   vm.entireList = {};
   vm.list_item = '';
-  // console.log(entireList);
+  console.log(vm.entireList);
 
   vm.getList = function(){
 //gets database list items
@@ -29,8 +29,12 @@ app.controller('TaskController', ['$http', function($http){
     vm.getList();
   };
 
-// vm.deleteListItem = function(){
-//   };
+vm.deleteListItem = function(item){
+  console.log(item);
+  $http.delete('/list/delete/' + item.id, {id: item.id}).then(function(response){
+    vm.getList();
+  });
+  };
 
 
 

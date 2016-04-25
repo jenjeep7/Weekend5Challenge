@@ -19,8 +19,9 @@
 <button ng-click="tc.sendData()">Submit</button>
 
 <div ng-repeat="item in tc.entireList">
-  {{item}}
-  <button ng-click="tc.deleteListItem()">Complete</button>
+  <input type="checkbox" />
+  {{item.list_item}}
+  <button ng-click="tc.deleteListItem(item)">Delete</button>
 </div>
 
 </body>
