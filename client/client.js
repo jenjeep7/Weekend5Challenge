@@ -40,3 +40,7 @@ vm.deleteListItem = function(item){
 vm.getList();
 
 }]);
+// 
+// vm.completeItem = function() {
+//
+// };

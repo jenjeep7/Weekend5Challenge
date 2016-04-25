@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-    <title>Weekend 5 Challenge</title>
+  <title>Weekend 5 Challenge</title>
 
-    <link rel="stylesheet" href="views/style.css" />
-    <script src="vendor/angular/angular.min.js"></script>
-    <script src="assets/scripts/client.min.js"></script>
-  </head>
-  <body ng-controller="TaskController as tc">
+  <link rel="stylesheet" href="views/style.css" />
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="assets/scripts/client.min.js"></script>
+</head>
+<body ng-controller="TaskController as tc">
 
-<h1>My Tasks</h1>
+  <h1>My Tasks</h1>
 
-<label>Enter new task:</label>
-<input type="text" size="80" placeholder="task" ng-model="tc.list.list_item"/>
+  <label>Enter new task:</label>
+  <input type="text" size="80" placeholder="task" ng-model="tc.list.list_item"/>
 
-<button ng-click="tc.sendData()">Submit</button>
+  <button ng-click="tc.sendData()">Submit</button>
 
-<div ng-repeat="item in tc.entireList">
-  <input type="checkbox" />
-  {{item.list_item}}
-  <button ng-click="tc.deleteListItem(item)">Delete</button>
-</div>
+  <div ng-repeat="item in tc.entireList" ng-class="{strike: done}">
+
+    <input type="checkbox" ng-model="done" />
+    {{item.list_item}}
+    <button ng-click="tc.deleteListItem(item)">Delete</button>
+  </div>
 
 </body>
 </html>

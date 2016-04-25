@@ -1,3 +1,6 @@
 body {
   background-color: rgb(90, 96, 125);
 }
+.strike {
+    text-decoration: line-through;
+}
